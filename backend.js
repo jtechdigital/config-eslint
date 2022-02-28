@@ -16,7 +16,6 @@ module.exports = {
   },
   plugins: ['import', '@typescript-eslint'],
   rules: {
-    'curly': ['error', 'multi'],
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-empty-function': 'off',
