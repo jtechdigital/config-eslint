@@ -25,7 +25,7 @@ module.exports = {
     'node/no-extraneous-import': 'off',
     'node/no-missing-import': 'off',
     'node/no-unsupported-features/es-syntax': ['error', { ignores: ['modules'] }],
-    'node/no-unpublished-import': ['error', { allowModules: ['type-fest', '@jtechdigital/type'] }],
+    'node/no-unpublished-import': 'off',
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-empty-function': 'off',
