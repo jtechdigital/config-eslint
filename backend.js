@@ -21,6 +21,7 @@ module.exports = {
   },
   plugins: ['@typescript-eslint'],
   rules: {
+    'no-restricted-imports': ['error', { paths: ['.', '..'] }],
     'node/no-extraneous-import': 'off',
     'node/no-missing-import': 'off',
     'node/no-unsupported-features/es-syntax': ['error', { ignores: ['modules'] }],
