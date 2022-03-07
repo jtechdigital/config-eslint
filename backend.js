@@ -3,19 +3,28 @@
  */
 module.exports = {
   parser: '@typescript-eslint/parser',
+  parserOptions: {
+    ecmaVersion: 2020,
+  },
   extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/eslint-recommended',
     'plugin:@typescript-eslint/recommended',
-    'plugin:eslint-comments/recommended',
+    'plugin:node/recommended',
   ],
-  env: {
-    'jest/globals': true,
-    'node': true,
-    'browser': true,
+  settings: {
+    node: { allowModules: [], tryExtensions: ['.ts', '.js'] },
   },
-  plugins: ['import', '@typescript-eslint'],
+  env: {
+    node: true,
+    browser: true,
+  },
+  plugins: ['@typescript-eslint'],
   rules: {
+    'node/no-extraneous-import': 'off',
+    'node/no-missing-import': 'off',
+    'node/no-unsupported-features/es-syntax': ['error', { ignores: ['modules'] }],
+    'node/no-unpublished-import': ['error', { allowModules: ['type-fest', '@jtechdigital/type'] }],
     '@typescript-eslint/ban-types': 'off',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     '@typescript-eslint/no-empty-function': 'off',
@@ -23,11 +32,5 @@ module.exports = {
     '@typescript-eslint/no-namespace': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
   },
-  overrides: [
-    {
-      files: ['tests/**'],
-      plugins: ['jest', 'jest-formatting'],
-      extends: ['plugin:jest/all', 'plugin:jest-formatting/strict'],
-    },
-  ],
+  overrides: [],
 };
